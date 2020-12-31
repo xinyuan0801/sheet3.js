@@ -1,0 +1,207 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+    ></script>
+    <script defer src="sheet3.js" type="text/javascript"></script>
+    <script defer src="application.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="sheet3.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <style>
+      #homebtn {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .tables {
+        margin-left: 23%;
+      }
+      .title {
+        margin-left: 16%;
+        color: #27b6b7;
+        margin-top: 30px;
+      }
+      .navTable {
+        margin-left: 37%;
+      }
+      #searchBar {
+        width: 50%;
+        margin: auto;
+      }
+      #searchBtn {
+        margin-left: 10%;
+      }
+      #buttons {
+        margin-left: 23%;
+        margin-bottom: 30px;
+      }
+      #btns {
+        margin-left: 23%;
+      }
+      #bg {
+        margin-left: 30%;
+      }
+      .subtitle {
+        font-size: 25px;
+        margin-top: 20px;
+        margin-left: 16%;
+        font-weight: bold;
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="https://cryptic-fortress-93256.herokuapp.com/documentation.html"
+            >API</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://cryptic-fortress-93256.herokuapp.com/examples.html"
+            >Examples</a
+          >
+        </li>
+      </ul>
+      <a
+        class="nav-link"
+        href="https://cryptic-fortress-93256.herokuapp.com/"
+        id="homebtn"
+        >Sheet3.js</a
+      >
+    </nav>
+
+    <h1 class="title">
+      1. the table in API pages are all made with this library
+    </h1>
+    <hr />
+
+    <h1 class="title">2.employee data management</h1>
+    <p class="subtitle">using search and showRow method of sheet3</p>
+    <p class="subtitle">Note: if the cell's content is not fully shown, you can always drag to expand cell</p>
+    <div id="searchBar">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="inputPassword2" class="sr-only"
+          >Search by emploper's id</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="Id"
+          placeholder="please enter employee's id"
+        />
+      </div>
+      <div id="bg">
+        <button
+          class="btn btn-primary mb-2"
+          onclick="searchId()"
+          id="searchBtn"
+        >
+          Search
+        </button>
+        <button class="btn btn-primary mb-2" onclick="showRows(1,20)">
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <div id="T1" class="tables"></div>
+
+    <nav aria-label="Page navigation example" class="navTable">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" onclick="showRows(1, 20)">1-20</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" onclick="showRows(21, 40)">21-40</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" onclick="showRows(41, 60)">41-60</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" onclick="showRows(61, 80)">61-80</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" onclick="showRows(81, 100)">81-100</a>
+        </li>
+      </ul>
+    </nav>
+    <hr />
+
+    <h1 class="title">3.Stock data</h1>
+    <p class="subtitle">using search, showRow, sum and avg method of sheet3</p>
+    <p class="subtitle">Note: if the cell's content is not fully shown, you can always drag to expand cell</p>
+    <div id="searchBar">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="inputPassword2" class="sr-only"
+          >Search by stock's id</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="StockId"
+          placeholder="please enter stock's id"
+        />
+      </div>
+      <div id="bg">
+        <button
+          class="btn btn-primary mb-2"
+          onclick="searchStock()"
+          id="searchBtn"
+        >
+          Search
+        </button>
+        <button class="btn btn-primary mb-2" onclick="showallStock()">
+          Reset
+        </button>
+      </div>
+    </div>
+    <div id="T2" class="tables"></div>
+    <div class="btn-group" role="group" aria-label="Basic example" id="buttons">
+      <button type="button" class="btn btn-secondary" onclick="marketSum()">
+        Market Cap Sum
+      </button>
+      <button type="button" class="btn btn-secondary" onclick="marketAvg()">
+        Market Cap Avg
+      </button>
+      <button type="button" class="btn btn-secondary" onclick="stockSum()">
+        Stock Price Sum
+      </button>
+      <button type="button" class="btn btn-secondary" onclick="stockAvg()">
+        Stock Price Avg
+      </button>
+    </div>
+    <br />
+
+    <button type="button" class="btn btn-secondary" id="btns" onclick="mLtoH()">
+      Market Cap(low to high)
+    </button>
+    <button type="button" class="btn btn-secondary" onclick="mHtoL()">
+      Market Cap(high to low)
+    </button>
+
+    <button type="button" class="btn btn-secondary" onclick="sLtoH()">
+      Stock Price(low to high)
+    </button>
+    <button type="button" class="btn btn-secondary" onclick="sHtoL()">
+      Stock Price(high to low)
+    </button>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

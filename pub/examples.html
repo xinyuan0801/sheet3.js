@@ -1,0 +1,1012 @@
+<html>
+
+<head>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-okaidia.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+  <script defer src="sheet3.js" type="text/javascript"></script>
+  <script defer src="examples.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="sheet3.css" />
+  <style>
+    #homebtn {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #title {
+      font-size: 50px;
+      margin-top: 20px;
+      margin-left: 20%;
+      font-weight: bold;
+      color: #27b6b7;
+    }
+
+    .subtitle {
+      font-size: 25px;
+      margin-top: 20px;
+      margin-left: 23%;
+      font-weight: bold;
+      color: #27b6b7;
+    }
+
+    .description {
+      font-size: 20px;
+      margin-top: 10px;
+      margin-left: 23%;
+    }
+
+    #T1 {
+      margin-left: 13%;
+      margin-top: 20px;
+    }
+
+    .codedemo {
+      width: 50%;
+      margin-left: 23%;
+    }
+
+    .caption {
+      font-size: 25px;
+      color: #2f68ac;
+    }
+
+    #myTab {
+      width: 50%;
+      margin-left: 23%;
+      margin-top: 10px;
+    }
+
+    #bg {
+      margin-top: 30px;
+      margin-left: 40%;
+    }
+
+    #myT1 {
+      margin-left: 37%;
+      margin-top: 20px;
+    }
+
+    #myT2 {
+      margin-left: 30%;
+      margin-top: 20px;
+    }
+
+    #myT3 {
+      margin-left: 37%;
+      margin-top: 20px;
+    }
+
+    #bg2 {
+      margin-top: 30px;
+      margin-left: 40%;
+    }
+
+    #styleDemo {
+      margin-top: 30px;
+    }
+
+    #fillDemo {
+      margin-left: 23%;
+      margin-top: 20px;
+    }
+
+    #fillDemo2 {
+      margin-left: 23%;
+      margin-top: 20px;
+    }
+    .warn {
+        font-size: 25px;
+        margin-top: 20px;
+        font-weight: bold;
+        color: orange;
+      }
+
+    #fillDemo3 {
+      margin-left: 23%;
+      margin-top: 20px;
+    }
+
+    #indexDemo {
+      margin-left: 23%;
+      margin-top: 20px;
+    }
+
+    #rowOpDemo {
+      margin-left: 23%;
+      margin-top: 20px;
+    }
+
+    #Button {
+      margin-left: 23%;
+    }
+
+    #inputGroups {
+      margin-left: 23%;
+      margin-top: 30px;
+    }
+
+    .demoTable {
+      margin-left: 23%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="https://cryptic-fortress-93256.herokuapp.com/documentation.html">API</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://cryptic-fortress-93256.herokuapp.com/examples.html">Examples</a>
+      </li>
+    </ul>
+    <a class="nav-link" href="https://cryptic-fortress-93256.herokuapp.com/" id="homebtn">Sheet3.js</a>
+  </nav>
+
+  <h1 id="title">Examples</h1>
+  <h2 class="subtitle">Basic Table</h2>
+  <h3 class="description">
+    a basic edit table that has vertical headers with the design of Dark
+    Mode
+  </h3>
+  <div id="T1"></div>
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home"
+        aria-selected="true">Java</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+        aria-selected="false">Html</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="codedemo">
+        <pre>
+        <code class="language-javascript">
+          const NumberTest = [
+            { first_name: "Leonard", last_name: "Faulconer", age: 45 },
+            { first_name: "Editha", last_name: "Keogh", age: 49 },
+            { first_name: "Jeth", last_name: "Hasson", age: 83 },
+            { first_name: "Liz", last_name: "De Bruyn", age: 46 },
+            { first_name: "Valentia", last_name: "Lasslett", age: 40 },
+          ];
+          var c = new sheet3({
+            id: "myT3",
+            row: 3,
+            col: 5,
+            type: "readonly",
+            location: "T1",
+            style: "DM",
+            mode: "vertical",
+            data: NumberTest
+          });
+          c.createTable();
+        </code>
+      </pre>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="codedemo">
+        <pre>
+          <code class="language-html">
+            &lt;div id="T1">&lt;/div>
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="subtitle" id="styleDemo">Style Demo</h1>
+  <h5 class="description">multiple design of table is provided so that user have a wide range choice of what kind of
+    table they wanted <br> <span class="warn">Note: minimal style is meant to be used under horzontial mode so switch to different mode might cause problem</span></h3>
+    <div id="bg">
+      <div class="btn-group justify-content-center" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success" onclick="changeStyle('gran')">gran</button>
+        <button type="button" class="btn btn-warning" onclick="changeStyle('basic')">basic</button>
+        <button type="button" class="btn btn-success" onclick="changeStyle('OE')">OE</button>
+        <button type="button" class="btn btn-info" onclick="changeStyle('MD')">Material Design</button>
+        <button type="button" class="btn btn-dark" onclick="changeStyle('DM')">Dark Mode</button>
+      </div>
+    </div>
+    <div>
+      <div class="btn-group" role="group" aria-label="Basic example" id="bg2">
+        <button type="button" class="btn btn-primary" onclick="showTable('vertical')">Vertical</button>
+        <button type="button" class="btn btn-primary" onclick="showTable('horzontial')">Horzontial</button>
+        <button type="button" class="btn btn-primary" onclick="showTable('vAndh')">Horzontial and Vertical</button>
+      </div>
+    </div>
+    <div id="sd1"></div>
+
+    <h1 class="subtitle">Fill in JSON data into Table</h1>
+    <h1 class="description">plz only click once(will cause bug), and don't picture a pink elephant</h1>
+    <div id="fillDemo"></div>
+    <button type="button" class="btn btn-primary" id="Button" onclick="t4.fillTable(JsontoRead)">Fill Data</button>
+
+    <h1 class="description">also works with editable table</h1>
+    <div id="fillDemo2"></div>
+    <button type="button" class="btn btn-primary" id="Button" onclick="t5.fillTable(JsontoRead)">Fill Data</button>
+
+    <h1 class="description">fill data with both vertical and horzontial headers</h1>
+    <div id="fillDemo3"></div>
+    <button type="button" class="btn btn-primary mt-3 mb-3" id="Button"
+      onclick="t6.fillHorAndVer(vh, hh, testData)">Fill
+      Data</button>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home1" role="tab" aria-controls="home1"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile1" role="tab" aria-controls="profile1"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home1" role="tabpanel" aria-labelledby="home1-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-javascript">
+          const JsontoRead = [
+          {
+            first_name: "Marijo",
+            last_name: "Durning",
+            email: "mdurning0@loc.gov",
+          },
+          {
+            first_name: "Erwin",
+            last_name: "Gorling",
+            email: "egorling1@va.gov",
+          },
+          {
+            first_name: "Erik",
+            last_name: "Hargrove",
+            email: "ehargrove2@dion.ne.jp",
+          },
+          {
+            first_name: "Freedman",
+            last_name: "Skeeles",
+            email: "fskeeles3@ovh.net",
+          },
+          {
+            first_name: "Rubi",
+            last_name: "Collis",
+            email: "rcollis4@com.com",
+          },
+        ];
+        vh = ["1", "2", "3"];
+        hh = ["a", "b", "c"];
+        id = {
+          "1+a": "1+a",
+          "1+b": "1+b",
+          "1+c": "1+c",
+          "2+a": "2+a",
+          "2+b": "2+b",
+          "2+c": 3,
+          "3+a": 1,
+          "3+b": 2,
+          "3+c": 3,
+        };
+
+        var t4 = new sheet3({
+          id: "t4",
+          row: 3,
+          col: 5,
+          type: "readonly",
+          location: "fillDemo",
+          style: "MD",
+          mode: "vertical",
+        });
+        t4.createTable();
+        
+        var t5 = new sheet3({
+          id: "t5",
+          row: 5,
+          col: 3,
+          type: "edit",
+          location: "fillDemo2",
+          style: "MD",
+          mode: "horzontial",
+        });
+        t5.createTable();
+        
+        var t6 = new sheet3({
+          id: "t6",
+          row: 3,
+          col: 3,
+          type: "readonly",
+          location: "fillDemo3",
+          style: "OE",
+          mode: "HorAndVer",
+        });
+        t6.createTable();
+
+        </code>
+      </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile1-tab">
+        <div class="codedemo">
+          <pre>
+          <code class="language-html">
+      &lt;div id="fillDemo">&lt;/div>
+      &lt;button type="button" class="btn btn-primary" id="Button" onclick="t4.fillTable(JsontoRead)">Fill Data&lt;/button>
+      &lt;div id="fillDemo2">&lt;/div>
+      &lt;button type="button" class="btn btn-primary" id="Button" onclick="t5.fillTable(JsontoRead)">Fill Data&lt;/button>
+      &lt;div id="fillDemo3">&lt;/div>
+      &lt;button type="button" class="btn btn-primary mt-3" id="Button" onclick="t6.fillHorAndVer(vh, hh, id);">Fill Data&lt;/button>
+          </code>
+        </pre>
+        </div>
+      </div>
+    </div>
+
+
+    <h1 class="subtitle">Indexing</h1>
+    <h1 class="description">Index the value in cell by row and column number</h1>
+    <div id="indexDemo"></div>
+
+    <div id="inputGroups">
+      <input type="text" id="row" placeholder="row num(start 0)">
+      <input type="text" id="col" placeholder="col num(start 0)">
+      <button type="button" class="btn btn-primary" id="Button" onclick="doindex()">index</button>
+    </div>
+
+
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home2" role="tab" aria-controls="home2"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile2" role="tab" aria-controls="profile2"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home2-tab">
+        <div class="codedemo">
+          <pre>
+      <code class="language-javascript">
+        const JsontoRead = [
+        {
+          first_name: "Marijo",
+          last_name: "Durning",
+          email: "mdurning0@loc.gov",
+        },
+        {
+          first_name: "Erwin",
+          last_name: "Gorling",
+          email: "egorling1@va.gov",
+        },
+        {
+          first_name: "Erik",
+          last_name: "Hargrove",
+          email: "ehargrove2@dion.ne.jp",
+        },
+        {
+          first_name: "Freedman",
+          last_name: "Skeeles",
+          email: "fskeeles3@ovh.net",
+        },
+        {
+          first_name: "Rubi",
+          last_name: "Collis",
+          email: "rcollis4@com.com",
+        },
+      ];
+      var t7 = new sheet3({
+        id: "t7",
+        row: 5,
+        col: 3,
+        type: "edit",
+        location: "indexDemo",
+        style: "MD",
+        mode: "horzontial",
+        data: JsontoRead
+      });
+      t7.createTable();
+      
+      function doindex() {
+        let row = $("#row").val()
+        let col = $("#col").val()
+        alert(t7.index(parseInt(row), parseInt(col)))
+      }
+      </code>
+    </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile2-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-html">
+
+          <div id="indexDemo"></div>
+          &lt;div id="indexDemo"><&lt;div>
+
+          &lt;div id="inputGroups">
+          &lt;input type="text" id="row" placeholder="row num(start 0)">
+          &lt;input type="text" id="col" placeholder="col num(start 0)">
+          &lt;button type="button" class="btn btn-primary" id="Button" onclick="doindex()">index&lt;/button>
+          &lt;/div>
+        </code>
+      </pre>
+        </div>
+      </div>
+    </div>
+
+
+    <h1 class="subtitle">Remove and adding row</h1>
+    <h1 class="description">user can remove row by index or add row by index(only available for horzontial headers
+      table)</h1>
+    <div id="rowOpDemo"></div>
+    <div id="inputGroups">
+      <input type="text" id="drow" placeholder="row num(start 1)">
+      <button type="button" class="btn btn-primary" id="Button" onclick="doDelete()">delete row</button>
+    </div>
+    <div id="inputGroups">
+      <input type="text" id="arow" placeholder="row num(start 1)">
+      <button type="button" class="btn btn-primary" id="Button" onclick="doAdd()">add row</button>
+    </div>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home3" role="tab" aria-controls="home3"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile3" role="tab" aria-controls="profile3"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home3-tab">
+        <div class="codedemo">
+          <pre>
+      <code class="language-javascript">
+        let addData = {
+          first_name: "Marijo",
+          last_name: "Durning",
+          email: "mdurning0@loc.gov",
+        };
+        var t8 = new sheet3({
+          id: "t8",
+          row: 5,
+          col: 3,
+          type: "edit",
+          location: "rowOpDemo",
+          style: "MD",
+          mode: "horzontial",
+          data: JsontoRead
+        });
+        t8.createTable();
+        
+        function doDelete() {
+          let row = $("#drow").val()
+          t8.removeRow(parseInt(row))
+        }
+        
+        function doAdd() {
+          let row = $("#arow").val()
+          t8.addRow(addData, row)
+        }
+      </code>
+    </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile3-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-html">
+          &lt;div id="rowOpDemo">&lt;/div>
+          &lt;input type="text" id="drow" placeholder="row num(start 1)">
+          &lt;button type="button" class="btn btn-primary" id="Button" onclick="doDelete()">delete row</button>
+          &lt;input type="text" id="arow" placeholder="row num(start 1)">
+          &lt;button type="button" class="btn btn-primary" id="Button" onclick="doAdd()">add row</button>
+          
+        </code>
+      </pre>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="subtitle">Sort column</h1>
+    <h1 class="description">user can sort column from high to low (only available for tables with horzontial headers)
+    </h1>
+    <div id="sortDemo" class="demoTable"></div>
+    <div id="inputGroups">
+      <input type="text" id="sortRow" placeholder="col num(start 0)">
+      <button type="button" class="btn btn-primary" onclick="doSort()">Sort</button>
+    </div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home4" role="tab" aria-controls="home4"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile4" role="tab" aria-controls="profile4"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home4" role="tabpanel" aria-labelledby="home4-tab">
+        <div class="codedemo">
+          <pre>
+      <code class="language-javascript">
+        const NumberTest = [
+          { first_name: "Leonard", last_name: "Faulconer", age: 45 },
+          { first_name: "Editha", last_name: "Keogh", age: 49 },
+          { first_name: "Jeth", last_name: "Hasson", age: 83 },
+          { first_name: "Liz", last_name: "De Bruyn", age: 46 },
+          { first_name: "Valentia", last_name: "Lasslett", age: 40 },
+        ];
+        var t9 = new sheet3({
+          id: "t9",
+          row: 5,
+          col: 3,
+          type: "edit",
+          location: "sortDemo",
+          style: "MD",
+          mode: "horzontial",
+          data: NumberTest
+        });
+        t9.createTable();
+        
+        function doSort() {
+          let col = $('#sortRow').val();
+          t9.sortByCol(parseInt(col));
+        }
+      </code>
+    </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile4-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-html">
+
+          &lt;div id="sortDemo" class="demoTable">&lt;/div>
+          &lt;div id="inputGroups">
+          &lt;input type="text" id="sortRow" placeholder="col num(start 0)">
+          &lt;button type="button" class="btn btn-primary" id="Button" onclick="doSort()">Sort</button>
+          &lt;/div>
+          
+        </code>
+      </pre>
+        </div>
+      </div>
+    </div>
+
+
+
+    <h1 class="subtitle">Search row</h1>
+    <h1 class="description">user can search specific row with a specific column and the content to search
+    </h1>
+    <div id="searchDemo" class="demoTable"></div>
+    <div id="inputGroups">
+      <input type="text" id="searchCol" placeholder="header's name">
+    </div>
+    <div id="inputGroups">
+      <input type="text" id="searchContent" placeholder="content">
+      <button type="button" class="btn btn-primary" onclick="doFind()">Find</button>
+      <button type="button" class="btn btn-primary" onclick="doReset()">reset</button>
+    </div>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home5" role="tab" aria-controls="home5"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile5" role="tab" aria-controls="profile5"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home5" role="tabpanel" aria-labelledby="home5-tab">
+        <div class="codedemo">
+          <pre>
+      <code class="language-javascript">
+        const NumberTest = [
+          { first_name: "Leonard", last_name: "Faulconer", age: 45 },
+          { first_name: "Editha", last_name: "Keogh", age: 49 },
+          { first_name: "Jeth", last_name: "Hasson", age: 83 },
+          { first_name: "Liz", last_name: "De Bruyn", age: 46 },
+          { first_name: "Valentia", last_name: "Lasslett", age: 40 },
+        ];
+        
+        var t10 = new sheet3({
+          id: "t10",
+          row: 5,
+          col: 3,
+          type: "edit",
+          location: "searchDemo",
+          style: "MD",
+          mode: "horzontial",
+          data: NumberTest
+        });
+        t10.createTable();
+        
+        function doFind() {
+          let selectedCol = $('#searchCol').val();
+          let searchContent = $('#searchContent').val();
+          $(t10.search(selectedCol, searchContent)).css('background-color', '#ddd')
+        }
+        
+        function doReset() {
+          let table = document.getElementById('t10')
+          $(table).remove();
+          t10.createTable();
+        }
+      </code>
+    </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile5" role="tabpanel" aria-labelledby="profile5-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-html">
+          &lt;div id="searchDemo" class="demoTable">&lt;/div>
+          &lt;div id="inputGroups">
+          &lt;input type="text" id="searchCol" placeholder="header's name">
+          &lt;/div>
+          &lt;div id="inputGroups">
+          &lt;input type="text" id="searchContent" placeholder="content">
+          &lt;button type="button" class="btn btn-primary" onclick="doFind()">Find</button>
+          &lt;button type="button" class="btn btn-primary" onclick="doReset()">reset</button>
+          &lt;/div>
+        </code>
+      </pre>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="subtitle">Export data in table</h1>
+    <h1 class="description">user can export the data in table into JSON format
+    </h1>
+    <div id="exportDataDemo" class="demoTable"></div>
+    <button type="button" class="btn btn-primary" id="Button" onclick="doExport()">export data</button>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home6" role="tab" aria-controls="home6"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile6" role="tab" aria-controls="profile6"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home6" role="tabpanel" aria-labelledby="home6-tab">
+        <div class="codedemo">
+          <pre>
+      <code class="language-javascript">
+        const NumberTest = [
+          { first_name: "Leonard", last_name: "Faulconer", age: 45 },
+          { first_name: "Editha", last_name: "Keogh", age: 49 },
+          { first_name: "Jeth", last_name: "Hasson", age: 83 },
+          { first_name: "Liz", last_name: "De Bruyn", age: 46 },
+          { first_name: "Valentia", last_name: "Lasslett", age: 40 },
+        ];
+        
+        var t11 = new sheet3({
+          id: "t11",
+          row: 5,
+          col: 3,
+          type: "edit",
+          location: "exportDataDemo",
+          style: "MD",
+          mode: "horzontial",
+          data: NumberTest
+        });
+        t11.createTable();
+        
+        function doExport() {
+          let arrayObject = t11.exportToJSON();
+          let result = arrayObject.map(function(json) {
+            return JSON.stringify(json);
+          })
+          alert(result)
+        }
+      </code>
+    </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile6" role="tabpanel" aria-labelledby="profile6-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-html">
+
+          &lt;div id="exportDataDemo" class="demoTable">&lt;/div>
+          &lt;button type="button" class="btn btn-primary" id="Button" onclick="doExport()">export data&lt;/button>
+        </code>
+      </pre>
+        </div>
+      </div>
+    </div>
+
+
+    <h1 class="subtitle">Show specific rows</h1>
+    <h1 class="description">user can choose to only show the rows that is in the range of row number given by user
+    </h1>
+    <div id="showRowDemo" class="demoTable"></div>
+
+    <div id="inputGroups">
+      <input type="text" id="toprow" placeholder="start row num(start 1)">
+    </div>
+    <div id="inputGroups">
+      <input type="text" id="botrow" placeholder=" end row num(start 1)">
+      <button type="button" class="btn btn-primary" onclick="doShow()">show</button>
+      <button type="button" class="btn btn-primary" onclick="doShowReset()">reset</button>
+    </div>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home7" role="tab" aria-controls="home7"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile7" role="tab" aria-controls="profile7"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home7" role="tabpanel" aria-labelledby="home7-tab">
+        <div class="codedemo">
+          <pre>
+      <code class="language-javascript">
+        const NumberTest = [
+          { first_name: "Leonard", last_name: "Faulconer", age: 45 },
+          { first_name: "Editha", last_name: "Keogh", age: 49 },
+          { first_name: "Jeth", last_name: "Hasson", age: 83 },
+          { first_name: "Liz", last_name: "De Bruyn", age: 46 },
+          { first_name: "Valentia", last_name: "Lasslett", age: 40 },
+        ];
+        
+        var t12 = new sheet3({
+          id: "t12",
+          row: 5,
+          col: 3,
+          type: "edit",
+          location: "showRowDemo",
+          style: "MD",
+          mode: "horzontial",
+          data: NumberTest
+        });
+        t12.createTable();
+        
+        function doShow() {
+          t12.resetShow();
+          let top = $('#toprow').val();
+          let bottom = $('#botrow').val();
+          t12.showRow(parseInt(top), parseInt(bottom))
+        }
+        
+        function doShowReset() {
+          t12.resetShow();
+        }
+      </code>
+    </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile7" role="tabpanel" aria-labelledby="profile7-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-html">
+
+          &lt;div id="showRowDemo" class="demoTable"></div>
+
+          &lt;div id="inputGroups">
+          &lt;input type="text" id="toprow" placeholder="row num(start 1)">
+          &lt;/div>
+          &lt;div id="inputGroups">
+          &lt;input type="text" id="botrow" placeholder="row num(start 1)">
+          &lt;button type="button" class="btn btn-primary" onclick="doShow()">show</button>
+          &lt;button type="button" class="btn btn-primary" onclick="doShowReset()">reset</button>
+          </div>
+        </code>
+      </pre>
+        </div>
+      </div>
+    </div>
+
+
+    <h1 class="subtitle">calculation of specific column</h1>
+    <h1 class="description">user can get the sum or average of specific column
+    </h1>
+    <div id="calDemo" class="demoTable"></div>
+
+    <div id="inputGroups">
+      <input type="text" id="calCol" placeholder="col num(start 0)">
+    </div>
+    <div id="inputGroups">
+      <button type="button" class="btn btn-primary" onclick="doSum()">Sum</button>
+      <button type="button" class="btn btn-primary ml-2" onclick="doAvg()">Avg</button>
+    </div>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home8" role="tab" aria-controls="home8"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile8" role="tab" aria-controls="profile8"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home8" role="tabpanel" aria-labelledby="home8-tab">
+        <div class="codedemo">
+          <pre>
+      <code class="language-javascript">
+        const NumberTest = [
+          { first_name: "Leonard", last_name: "Faulconer", age: 45 },
+          { first_name: "Editha", last_name: "Keogh", age: 49 },
+          { first_name: "Jeth", last_name: "Hasson", age: 83 },
+          { first_name: "Liz", last_name: "De Bruyn", age: 46 },
+          { first_name: "Valentia", last_name: "Lasslett", age: 40 },
+        ];
+        
+        var t13 = new sheet3({
+          id: "t13",
+          row: 5,
+          col: 3,
+          type: "edit",
+          location: "calDemo",
+          style: "MD",
+          mode: "horzontial",
+          data: NumberTest
+        });
+        t13.createTable();
+        
+        function doSum() {
+          let sumCol = $('#calCol').val()
+          alert(t13.sum(sumCol))
+        }
+        
+        function doAvg() {
+          let avgCol = $('#calCol').val()
+          alert(t13.avg(avgCol))
+        }
+      </code>
+    </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile8" role="tabpanel" aria-labelledby="profile8-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-html">
+          &lt;div id="calDemo" class="demoTable">&lt;/div>
+
+          &lt;div id="inputGroups">
+          &lt;input type="text" id="calCol" placeholder="col num(start 1)">
+          &lt;/div>
+          &lt;div id="inputGroups">
+          &lt;button type="button" class="btn btn-primary" onclick="doSum()">Sum</button>
+          &lt;button type="button" class="btn btn-primary ml-2" onclick="doAvg()">Avg</button>
+          &lt;/div>
+        </code>
+      </pre>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="subtitle">set specific cell of table</h1>
+    <h1 class="description">user set the content of specific cell of table
+    </h1>
+    <div id="setCellDemo" class="demoTable"></div>
+    <div id="inputGroups">
+      <input type="text" id="setRow" placeholder="row num(start 0)">
+      <input type="text" id="setCol" placeholder="col num(start 0)">
+      <input type="text" id="setContent" placeholder="content">
+    </div>
+    <div id="inputGroups">
+      <button type="button" class="btn btn-primary" onclick="doSet()">Set</button>
+    </div>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home9" role="tab" aria-controls="home9"
+          aria-selected="true">Java</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile9" role="tab" aria-controls="profile9"
+          aria-selected="false">Html</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home9" role="tabpanel" aria-labelledby="home9-tab">
+        <div class="codedemo">
+          <pre>
+      <code class="language-javascript">
+        const NumberTest = [
+          { first_name: "Leonard", last_name: "Faulconer", age: 45 },
+          { first_name: "Editha", last_name: "Keogh", age: 49 },
+          { first_name: "Jeth", last_name: "Hasson", age: 83 },
+          { first_name: "Liz", last_name: "De Bruyn", age: 46 },
+          { first_name: "Valentia", last_name: "Lasslett", age: 40 },
+        ];
+        
+        var t14 = new sheet3({
+          id: "t14",
+          row: 5,
+          col: 3,
+          type: "edit",
+          location: "setCellDemo",
+          style: "MD",
+          mode: "horzontial",
+          data: NumberTest
+        });
+        t14.createTable();
+        
+        function doSet() {
+          let row = $('#setRow').val();
+          let col = $('#setCol').val();
+          let content = $('#setContent').val();
+          t14.setCell(parseInt(row), parseInt(col), content);
+        }
+      </code>
+    </pre>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile9" role="tabpanel" aria-labelledby="profile9-tab">
+        <div class="codedemo">
+          <pre>
+        <code class="language-html">
+          &lt;div id="setCellDemo" class="demoTable">&lt;/div>
+          &lt;div id="inputGroups">
+            &lt;input type="text" id="setRow" placeholder="row num(start 1)">
+            &lt;input type="text" id="setCol" placeholder="col num(start 1)">
+            &lt;input type="text" id="setContent" placeholder="content">
+            &lt;/div>
+            &lt;div id="inputGroups">
+            &lt;button type="button" class="btn btn-primary" onclick="doSet()">Set</button>
+            &lt;/div>
+        </code>
+      </pre>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js" integrity="sha512-9+422Bs3A87UkWfp+qV80Nfv9arhbCXKY1rxrF2seorI36mIIstMiuBfyKLF1yH1nnzQkEWq2xrzT4XU3Z+vrA==" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
