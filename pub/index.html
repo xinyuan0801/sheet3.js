@@ -11,32 +11,39 @@
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
   <style>
     #title {
-      font-family: 'Courier New', monospace;
+      font-family: 'Monaco';
       margin: auto;
       text-align: center;
       font-size: 100px;
-      margin-top: 10%;
-    }
-
-    .row {
-      width: 70%;
-      margin: auto;
-      margin-top: 10%;
+      margin-top: 7%;
+      color: white;
     }
 
     #content {
-      background-color: #27B6B7;
+      background-color: #5CDB95;
       height: 100vh;
     }
+
+    .card {
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
 
     #cardContent1 {
       position: fixed;
       border-radius: 15px;
-      width: 15%;
-      height: 21%;
+      width: 17%;
+      height: auto;
       top: 50%;
       right: 30%;
-      background-color: #2F68AC;
+      background-color: #05386B;
+      font-family: 'Monaco';
     }
 
     #cardContent2 {
@@ -45,14 +52,23 @@
       top: 50%;
       left: 30%;
       border-radius: 15px;
-      width: 15%;
-      height: 21%;
-      background-color: #2F68AC;
+      width: 17%;
+      height: auto;
+      background-color: #05386B;
+      font-family: 'Monaco';
+    }
+
+    #checkbtn1 {
+      height: 39%;
+    }
+
+    #checkbtn2 {
+      height: 39%;
     }
 
     #img {
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -96,16 +112,16 @@
     <div class="card text-white" id="cardContent1">
       <img src="assets/icons8-design-64.png" class="card-img-top" alt="..." id="img">
       <div class="card-body">
-        <h5 class="card-title">Different design of Table available</h5>
-        <a href="https://cryptic-fortress-93256.herokuapp.com/examples.html#styleDemo" class="btn btn-primary d-flex justify-content-center">Check</a>
+        <h5 class="card-title">Different design available</h5>
+        <a href="https://cryptic-fortress-93256.herokuapp.com/examples.html#styleDemo" class="btn btn-primary d-flex justify-content-center" id="checkbtn1">Check</a>
       </div>
     </div>
 
     <div class="card text-white" id="cardContent2">
       <img src="assets/icons8-coffee-64.png" class="card-img-top" alt="..." id="img">
       <div class="card-body">
-        <h5 class="card-title">Much Easie operations on Table</h5>
-        <a href="https://cryptic-fortress-93256.herokuapp.com/examples.html" class="btn btn-primary d-flex justify-content-center">Check</a>
+        <h5 class="card-title">Much Easier operations</h5>
+        <a href="https://cryptic-fortress-93256.herokuapp.com/examples.html" class="btn btn-primary d-flex justify-content-center" id="checkbtn2">Check</a>
       </div>
     </div>
     <button type="button" class="btn btn-primary" id="more" onclick="location.href='https://cryptic-fortress-93256.herokuapp.com/application.html'"><span id="morebtn">check out some applications</span></button>
