@@ -10,19 +10,42 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
   <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    #content {
+      background: linear-gradient(-45deg, #ee7752, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      height: 100vh;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
     #title {
       font-family: 'Monaco';
       margin: auto;
       text-align: center;
       font-size: 100px;
       margin-top: 7%;
-      color: #05386B;
+      color: #D6E1DA;
     }
 
-    #content {
-      background-color: #5CDB95;
-      height: 100vh;
-    }
 
     .card {
       /* Add shadows to create the "card" effect */
@@ -133,7 +156,8 @@
     </div>
     <div id="moreSec">
       <button type="button" class="btn btn-primary" id="moreBtn"
-        onclick="location.href='https://cryptic-fortress-93256.herokuapp.com/application.html'"><span id="moreBtnFont">check
+        onclick="location.href='https://cryptic-fortress-93256.herokuapp.com/application.html'"><span
+          id="moreBtnFont">check
           out some Demo</span></button>
     </div>
   </div>
