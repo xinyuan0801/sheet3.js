@@ -26,51 +26,31 @@
 
     .card {
       /* Add shadows to create the "card" effect */
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       transition: 0.3s;
     }
 
     .card:hover {
-      box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
     }
 
 
-    #cardContent1 {
-      position: fixed;
+    #cardContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       border-radius: 15px;
-      width: 17%;
-      height: auto;
-      top: 50%;
-      right: 30%;
-      background-color: #05386B;
-      font-family: 'Monaco';
-    }
-
-    #cardContent2 {
-
-      position: fixed;
-      top: 50%;
-      left: 30%;
-      border-radius: 15px;
-      width: 17%;
+      width: 15%;
       height: auto;
       background-color: #05386B;
       font-family: 'Monaco';
+      margin: 20px;
     }
 
-    #checkbtn1 {
-      height: 39%;
-    }
-
-    #checkbtn2 {
-      height: 39%;
-    }
 
     #img {
       width: 100px;
       height: 100px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     #homebtn {
@@ -79,12 +59,15 @@
     }
 
     #contentgo {
-      height: 40%;
-      width: 100%
+      margin-top: 200px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
     }
 
     .title {
-      text-align: center; 
+      text-align: center;
     }
 
     #more {
@@ -95,13 +78,21 @@
       height: auto;
       font-family: 'Monaco';
     }
+
     .morebtngo {
       width: 100%;
       height: 300px;
     }
+
     #morebtn {
       font-size: 30px;
       font-weight: bold;
+    }
+
+    .checkBtn {
+      text-align: center;
+      width: 50%;
+      margin-bottom: 20px;
     }
   </style>
   <title>Sheet3.js</title>
@@ -112,7 +103,8 @@
     <nav class="navbar navbar-light bg-light">
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="https://cryptic-fortress-93256.herokuapp.com/documentation.html">API</a>
+          <a class="nav-link active" aria-current="page"
+            href="https://cryptic-fortress-93256.herokuapp.com/documentation.html">API</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://cryptic-fortress-93256.herokuapp.com/examples.html">Examples</a>
@@ -125,26 +117,27 @@
 
     <div id="contentgo">
 
-    <div class="card text-white" id="cardContent1">
-      <img src="assets/icons8-design-64.png" class="card-img-top" alt="..." id="img">
-      <div class="card-body">
+      <div class="card text-white" id="cardContent">
+        <img src="assets/icons8-design-64.png" class="card-img-top" alt="..." id="img">
         <h5 class="card-title title">Different design available</h5>
-        <a href="https://cryptic-fortress-93256.herokuapp.com/examples.html#styleDemo" class="btn btn-primary d-flex justify-content-center" id="checkbtn1">Check</a>
-      </div>
-    </div>
+        <a href="https://cryptic-fortress-93256.herokuapp.com/examples.html#styleDemo"
+          class="checkBtn btn-primary btn">Check</a>
 
-    <div class="card text-white" id="cardContent2">
-      <img src="assets/icons8-coffee-64.png" class="card-img-top" alt="..." id="img">
-      <div class="card-body">
+      </div>
+
+      <div class="card text-white" id="cardContent">
+        <img src="assets/icons8-coffee-64.png" class="card-img-top" alt="..." id="img">
         <h5 class="card-title title">Much Easier operations</h5>
-        <a href="https://cryptic-fortress-93256.herokuapp.com/examples.html" class="btn btn-primary d-flex justify-content-center" id="checkbtn2">Check</a>
-      </div>
-    </div>
+        <a href="https://cryptic-fortress-93256.herokuapp.com/examples.html" class="checkBtn btn-primary btn">Check</a>
 
-  </div>
+      </div>
+
+    </div>
     <div class="morebtngo">
-    <button type="button" class="btn btn-primary" id="more" onclick="location.href='https://cryptic-fortress-93256.herokuapp.com/application.html'"><span id="morebtn">check out some Demo</span></button>
-  </div>
+      <button type="button" class="btn btn-primary" id="more"
+        onclick="location.href='https://cryptic-fortress-93256.herokuapp.com/application.html'"><span id="morebtn">check
+          out some Demo</span></button>
+    </div>
   </div>
   </div>
 
