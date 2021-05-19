@@ -5,10 +5,8 @@
     const self = {};
     self.options = options;
     self.createTable = function () {
-      if (self.options["data"] == null) {
-        _createTable(self.options);
-      } else {
-        _createTable(self.options);
+      _createTable(self.options);
+      if (self.options["data"] != null) {
         _fillTab(self.options.data);
       }
     };
