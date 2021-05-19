@@ -6,7 +6,7 @@
     self.options = options;
     self.createTable = function () {
       _createTable(self.options);
-      if (self.options["data"] != null) {
+      if (self.options["data"] !== undefined) {
         _fillTab(self.options.data);
       }
     };
@@ -382,24 +382,29 @@
     function _fillTab(inputData) {
       let id = self.options.id;
       let table = document.getElementById(id);
+      // extracting all keys, which will be the header of table
       let keys = Object.keys(inputData[0]);
       _setupHeader(table, keys);
+      // all the rows node in the new table in a list
       let rows = document
         .getElementById(id)
         .getElementsByTagName("tbody")[0]
         .getElementsByTagName("tr");
+      // different ways to fill table depend on the types
       if (self.options.mode == "horzontial") {
         if (self.options.type == "readonly") {
           for (let a = 1; a < inputData.length + 1; a++) {
+            // find all td elements in a row
             let input = $(rows[a]).find("td");
-
             for (let b = 0; b < keys.length; b++) {
+              // fill the table with text by appending textNode
               let text = document.createTextNode(inputData[a - 1][keys[b]]);
               input[b].appendChild(text);
             }
           }
         } else {
           for (let a = 1; a < inputData.length + 1; a++) {
+            // different from readonly table, for editable table we need to find input node and modify that
             let input = $(rows[a]).find("td").find("input");
             for (let b = 0; b < keys.length; b++) {
               input[b].value = inputData[a - 1][keys[b]];
