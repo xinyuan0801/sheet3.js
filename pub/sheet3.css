@@ -8,7 +8,7 @@ table.basic th {
   height: 25px;
   cursor: cell;
   min-width: 150px;
-  background-color: #C7C7C7;
+  background-color: #c7c7c7;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ table.OE th {
   min-width: 150px;
   height: 25px;
   cursor: cell;
-  background-color: #009B37;
+  background-color: #009b37;
   color: white;
   text-align: center;
 }
@@ -66,7 +66,7 @@ table.MD {
   font-size: 0.9em;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   font-family: sans-serif;
-  overflow: hidden
+  overflow: hidden;
 }
 
 table.MD th {
@@ -74,14 +74,17 @@ table.MD th {
   height: 25px;
   cursor: cell;
   background-color: #009879;
-  border-right: solid 2px #918D8D;
+  border-right: solid 2px #918d8d;
   color: white;
-  border-top: solid 2px #918D8D;
   text-align: center;
 }
 
+table.MD th:last-child {
+  border-right: none;
+}
+
 table.MD td {
-  border-right: solid 2px #918D8D;
+  border-right: solid 2px #918d8d;
   min-width: 150px;
   height: 25px;
   width: auto;
@@ -113,23 +116,26 @@ table.DM {
   font-size: 0.9em;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   font-family: sans-serif;
-  overflow: hidden
+  overflow: hidden;
 }
 
 table.DM th {
-  border-top: solid 2px #918D8D;
   min-width: 100px;
   height: 25px;
   width: auto;
   cursor: cell;
-  background-color: #5727B7;
+  background-color: #5727b7;
   color: white;
-  border-right: solid 2px #918D8D;
+  border-right: solid 2px #918d8d;
   text-align: center;
 }
 
+table.DM th:last-child {
+  border-right: none;
+}
+
 table.DM td {
-  border-right: solid 2px #918D8D;
+  border-right: solid 2px #918d8d;
   min-width: 150px;
   height: 25px;
   width: auto;
@@ -137,7 +143,7 @@ table.DM td {
   padding-left: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: white
+  color: white;
 }
 
 .DM tr:nth-child(even) {
@@ -196,14 +202,13 @@ table.DM td {
   background: transparent;
 }
 
-
 table.gran {
   border-collapse: collapse;
   table-layout: auto;
 }
 
 table.gran tr {
-  border-bottom: solid thin #918D8D;
+  border-bottom: solid thin #918d8d;
 }
 
 table.gran th {
@@ -217,7 +222,7 @@ table.gran td {
   height: 25px;
 
   padding-right: 10px;
-  
+
   width: auto;
   padding-left: 3px;
   padding-top: 3px;
@@ -233,7 +238,7 @@ table.gran td {
 }
 
 .gran td:first-child {
-  color:#27b6b7;
+  color: #27b6b7;
   font-weight: bold;
 }
 

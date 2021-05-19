@@ -436,9 +436,7 @@
       if (self.options.mode == "horzontial") {
         let tbody = $(table).find("tbody");
         header = $("<tr/>");
-        // header.setAttribute("class", "header")
         let columlength = table.rows[0].cells.length;
-
         for (let a = 0; a < keylength; a++) {
           let th = $("<th/>").html(keys[a]);
           th.css("position", "relative");
