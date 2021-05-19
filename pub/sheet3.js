@@ -41,7 +41,7 @@
     //idea of how to sort https://www.w3schools.com/howto/howto_js_sort_table.asp
     //add some more features from that
     self.sortByCol = function (colNum, mode = "startLow") {
-      var a;
+      let a;
       const table = document.getElementById(self.options.id);
       let sorting = true;
       while (sorting) {
@@ -99,7 +99,7 @@
       let keys = Object.keys(JSONtoAdd);
       for (let a = 0; a < keys.length; a++) {
         let td = document.createElement("td");
-        var cell;
+        let cell;
         if (self.options.type == "readonly") {
           cell = document.createTextNode(JSONtoAdd[keys[a]]);
         } else if (self.options.type == "edit") {
@@ -109,7 +109,7 @@
           cell.value = JSONtoAdd[keys[a]];
         }
 
-        var controlArea = _addControlArea(td, table);
+        let controlArea = _addControlArea(td, table);
         controlArea.style.height = height + "px";
         $(td).css("position", "relative");
         $(td).append(cell);
@@ -155,14 +155,14 @@
       // thempty.attr('id', "emptyHeader")
       header.append(thempty);
       // header.setAttribute("class", "header")
-      var columlength = table.rows[1].cells.length;
+      let columlength = table.rows[1].cells.length;
 
       for (let a = 0; a < Hh.length; a++) {
-        var th = $("<th/>").html(Hh[a]);
+        let th = $("<th/>").html(Hh[a]);
         th.css("position", "relative");
         th.css("text-align", "center");
         th.css("font-weight", "bold");
-        var controlArea = _addControlArea(th, table);
+        let controlArea = _addControlArea(th, table);
         controlArea.style.height = table.rows[0].offsetHeight;
         th.append(controlArea);
         header.append(th);
@@ -171,11 +171,11 @@
       let trs = $(table).find("tbody").find("tr");
 
       for (let a = 0; a < Vh.length; a++) {
-        var th = $("<th/>").html(Vh[a]);
+        let th = $("<th/>").html(Vh[a]);
         th.css("position", "relative");
         th.css("text-align", "center");
         th.css("font-weight", "bold");
-        var controlArea = _addControlArea(th, table);
+        let controlArea = _addControlArea(th, table);
         controlArea.style.height = table.rows[0].offsetHeight;
         th.append(controlArea);
         $(trs[a]).prepend(th);
@@ -186,7 +186,7 @@
         for (let b = 1; b < Hh.length + 1; b++) {
           let key = Vh[a - 1] + "+" + Hh[b - 1];
           if (self.options.type == "readonly") {
-            var text = document.createTextNode(inputData[key]);
+            let text = document.createTextNode(inputData[key]);
             row.cells[b].appendChild(text);
           } else if (self.options.type == "edit") {
             $(row.cells[b]).find("input").val(inputData[key]);
@@ -208,7 +208,7 @@
           .find("tr")
           .each(function (index) {
             if (index != 0) {
-              var result = new Object();
+              let result = new Object();
               for (let a = 0; a < headerKey.length; a++) {
                 let key = headerKey[a];
                 let value;
@@ -314,7 +314,7 @@
     self.avg = function (avgPlace) {
       let table = document.getElementById(self.options.id);
       let total = self.sum(avgPlace);
-      var avgerage;
+      let avgerage;
       if (self.options.mode == "horzontial") {
         avgerage = total / table.rows.length;
       } else if (self.options.mode == "vertical") {
@@ -380,27 +380,27 @@
       }
     };
     function _fillTab(inputData) {
-      var id = self.options.id;
-      var table = document.getElementById(id);
-      var keys = Object.keys(inputData[0]);
+      let id = self.options.id;
+      let table = document.getElementById(id);
+      let keys = Object.keys(inputData[0]);
       _setupHeader(table, keys);
-      var rows = document
+      let rows = document
         .getElementById(id)
         .getElementsByTagName("tbody")[0]
         .getElementsByTagName("tr");
       if (self.options.mode == "horzontial") {
         if (self.options.type == "readonly") {
           for (let a = 1; a < inputData.length + 1; a++) {
-            var input = $(rows[a]).find("td");
+            let input = $(rows[a]).find("td");
 
             for (let b = 0; b < keys.length; b++) {
-              var text = document.createTextNode(inputData[a - 1][keys[b]]);
+              let text = document.createTextNode(inputData[a - 1][keys[b]]);
               input[b].appendChild(text);
             }
           }
         } else {
           for (let a = 1; a < inputData.length + 1; a++) {
-            var input = $(rows[a]).find("td").find("input");
+            let input = $(rows[a]).find("td").find("input");
             for (let b = 0; b < keys.length; b++) {
               input[b].value = inputData[a - 1][keys[b]];
             }
@@ -410,15 +410,15 @@
         if (self.options.type == "readonly") {
           for (let a = 1; a < inputData.length + 1; a++) {
             for (let b = 0; b < keys.length; b++) {
-              var input = $(rows[b].cells[a]);
-              var text = document.createTextNode(inputData[a - 1][keys[b]]);
+              let input = $(rows[b].cells[a]);
+              let text = document.createTextNode(inputData[a - 1][keys[b]]);
               $(input).append(text);
             }
           }
         } else {
           for (let a = 1; a < inputData.length + 1; a++) {
             for (let b = 0; b < keys.length; b++) {
-              var input = $(rows[b].cells[a]).find("input");
+              let input = $(rows[b].cells[a]).find("input");
               input[0].value = inputData[a - 1][keys[b]];
             }
           }
@@ -427,27 +427,27 @@
     }
 
     function _setupHeader(table, keys) {
-      var keylength = keys.length;
+      let keylength = keys.length;
       if (self.options.mode == "horzontial") {
         let tbody = $(table).find("tbody");
         header = $("<tr/>");
         // header.setAttribute("class", "header")
-        var columlength = table.rows[0].cells.length;
+        let columlength = table.rows[0].cells.length;
 
         for (let a = 0; a < keylength; a++) {
-          var th = $("<th/>").html(keys[a]);
+          let th = $("<th/>").html(keys[a]);
           th.css("position", "relative");
 
           th.css("font-weight", "bold");
-          var controlArea = _addControlArea(th, table);
+          let controlArea = _addControlArea(th, table);
           controlArea.style.height = table.rows[0].offsetHeight;
           th.append(controlArea);
           header.append(th);
         }
         for (let a = 0; a < columlength - keylength; a++) {
-          var th = $("<th/>").html("");
+          let th = $("<th/>").html("");
           th.css("position", "relative").height();
-          var controlArea = _addControlArea(th, table);
+          let controlArea = _addControlArea(th, table);
           controlArea.style.height = table.rows[0].offsetHeight;
           th.append(controlArea);
           header.append(th);
@@ -456,11 +456,11 @@
       } else if (self.options.mode == "vertical") {
         let trs = $(table).find("tbody").find("tr");
         for (let a = 0; a < keylength; a++) {
-          var th = $("<th/>").html(keys[a]);
+          let th = $("<th/>").html(keys[a]);
           th.css("position", "relative");
           th.css("text-align", "center");
           th.css("font-weight", "bold");
-          var controlArea = _addControlArea(th, table);
+          let controlArea = _addControlArea(th, table);
           controlArea.style.height = table.rows[0].offsetHeight;
           th.append(controlArea);
           $(trs[a]).prepend(th);
@@ -469,7 +469,7 @@
     }
 
     function _addControlArea(content, table) {
-      var controlArea = document.createElement("div");
+      let controlArea = document.createElement("div");
       controlArea.setAttribute("class", "control");
       controlArea.style.top = 0;
       controlArea.style.right = 0;
@@ -482,35 +482,35 @@
     }
 
     function _createTable(options) {
-      var table = document.createElement("TABLE");
+      let table = document.createElement("TABLE");
       table.setAttribute("id", options.id);
-      var des = document.getElementById(options.location);
+      let des = document.getElementById(options.location);
       table.setAttribute("class", options.style);
       des.appendChild(table);
       let row = options.row;
       let col = options.col;
       if (options.type == "readonly") {
         for (let a = 0; a < row; a++) {
-          var singlerow = document.getElementById(options.id).insertRow(a);
+          let singlerow = document.getElementById(options.id).insertRow(a);
           for (let b = 0; b < col; b++) {
-            var content = singlerow.insertCell(b);
-            var textarea = document.createTextNode("");
+            let content = singlerow.insertCell(b);
+            let textarea = document.createTextNode("");
             content.appendChild(textarea);
-            var controlArea = _addControlArea(content, table);
+            let controlArea = _addControlArea(content, table);
             content.appendChild(controlArea);
             content.style.position = "relative";
           }
         }
       } else {
         for (let a = 0; a < row; a++) {
-          var singlerow = document.getElementById(options.id).insertRow(a);
+          let singlerow = document.getElementById(options.id).insertRow(a);
           for (let b = 0; b < col; b++) {
-            var content = singlerow.insertCell(b);
-            var input = document.createElement("INPUT");
+            let content = singlerow.insertCell(b);
+            let input = document.createElement("INPUT");
             input.setAttribute("type", "text");
             input.setAttribute("size", "auto");
             content.appendChild(input);
-            var controlArea = _addControlArea(content, table);
+            let controlArea = _addControlArea(content, table);
             content.appendChild(controlArea);
             content.style.position = "relative";
           }
@@ -519,7 +519,7 @@
     }
 
     function _setListeners(div, table) {
-      var pageX, curCell, curCellWidth, columnNo;
+      let pageX, curCell, curCellWidth, columnNo;
       div.addEventListener("mousedown", function (e) {
         curCell = e.target.parentElement;
         columnNo = curCell.cellIndex + 1;
@@ -529,7 +529,7 @@
 
       document.addEventListener("mousemove", function (e) {
         if (curCell) {
-          var diffX = e.pageX - pageX;
+          let diffX = e.pageX - pageX;
           if (curCellWidth + diffX > 1) {
             $("tr > td:nth-child(" + columnNo + ")", table).each(function () {
               this.style.width = curCellWidth + diffX + "px";
